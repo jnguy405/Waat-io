@@ -1,4 +1,4 @@
-# [Waat.io](https://jnguy405.github.io/cmpm-121-f25-d2-JenaleeNguyen/) | CMPM 121 D2 Project
+# [Waat.io](https://jnguy405.github.io/Waatio/) | CMPM 121 D2 Project
 
 ## Waat.io
 
