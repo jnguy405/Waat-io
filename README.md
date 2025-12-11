@@ -1,14 +1,66 @@
-# CMPM 121 D2 Project
+# [Waat.io](https://jnguy405.github.io/cmpm-121-f25-d2-JenaleeNguyen/) | CMPM 121 D2 Project
 
-1. **Step 1**: Added container including _app title_ and rounded _canvas_ with drop-shadow using CSS by ID access.
-2. **Step 2**: Implemented observers for mouse events to allow the user to draw. Additonal button to clear the canvas.
-3. **Step 3**: Dispatched a `drawing-changed` event on the canvas and utilized an observer to clear and redraw the user's stored strokes from given cursor positions.
-4. **Step 4**: Added `undo` and `redo` buttons (system and updated css) which use pop() and push() to save the user's strokes.
-5. **Step 5**: Refactored the app to store drawing strokes as objects with `display` and `drag` methods and allowed the canvas to redraw and manage undo/redo operations without changing the user experience.
-6. **Step 6**: Introduced two marker tools (“thin” and “thick”) that lets users choose the line thickness for new strokes with visual feedback indicating the selected tool. Attempted to categorize `main.ts` functions and events with comments.
-7. **Step 7**: Added a live tool preview that follows the cursor when not drawing by creating a preview object with a display method and dispatching a tool-moved event to render it on the canvas.
-8. **Step 8**: Implemented multiple sticker tools (☕, 🍪, 🍩) with live previews that can be placed on the canvas using the command pattern, integrated with undo/redo and visual tool selection.
-9. **Step 9**: Refactored the sticker system to use a data-driven design, where all available stickers are defined by a single array. Added a “Create custom sticker” button that uses `prompt()` to let users add new stickers dynamically with the same behaviors as existing stickers.
-10. **Step 10**: Added a high-resolution `Export` feature that generates a temporary `1024×1024 canvas`, redraws all saved commands at 4× scale, and triggers a `PNG` download of the drawing. This enables users to export crisp, high-quality versions of their creations directly from the app Refactored thin and thick marker tools to use `deselectAll()` and `selectMarker()` to reduce redundancy and bulk.
-11. **Step 11**: Added sticker emoji, changed marker thickness, and made a coffee theme.
-12. **Step 12**: Implement hue slider for marker color and rotation slider for sticker orientation with real-time previews. Enhance tool state management to maintain color/rotation settings and synchronize UI controls. Refactored `StickerCmd` and `StickerPreview` to utilize `renderStickerOnCanvas` and altered interfaces to include stickers and their properties.
+## Waat.io
+
+🎨 A fully interactive, feature-rich drawing application built with TypeScript, canvas rendering, and event-driven architecture to practice software fundamentals and user-centered design.
+
+---
+
+## 🚀 Project Progression
+
+This project evolved from a simple drawing app into a modular, extensible system:
+
+1. Started with core mouse event handling and canvas manipulation.
+2. Introduced event dispatching and observation to decouple components.
+3. Refactored into object-oriented stroke and command models.
+4. Generalized tools using the command pattern and data-driven configuration.
+5. Enhanced UX with real-time previews and fine-grained controls.
+
+---
+
+## 📦 Tech Stack
+
+- **TypeScript**: Strong typing ensures runtime safety and maintainable code structure.
+- **HTML5 Canvas**: Pixel-perfect rendering with scalable export.
+- **Vanilla DOM**: UI constructed programmatically with `document.createElement`.
+- **CSS3**: Styled entirely via JS-linked stylesheet (rounded canvas, drop shadows, responsive layout).
+- **GitHub Actions**: Automated deployment to GitHub Pages.
+
+---
+
+## 🔧 Features & Technical Highlights
+
+### ✅ Core Functionality
+
+- **Canvas Drawing**: Mouse event observers enable smooth freehand drawing with stroke recording.
+- **Clear Canvas**: One-click reset with visual feedback.
+- **Export High-Res PNG**: Render drawing at 4× scale (1024×1024) for crisp, downloadable artwork.
+
+### ⏪ State Management
+
+- **Undo/Redo System**: Implemented command pattern with stack manipulation (`push`/`pop`) to allow multi-step history.
+- **Event-Driven Redraws**: Dispatch `drawing-changed` events to synchronize UI updates with model state.
+
+### 🛠️ Tool System
+
+- **Dual Marker Tools**: Toggle between "thin" and "thick" stroke widths with visual selection feedback.
+- **Sticker Placement**: Add emoji stickers (☕, 🍪, 🍩) via live preview and click-to-place interaction.
+- **Custom Stickers**: Dynamically create new stickers using `prompt()` input — data-driven design allows seamless integration.
+- **Tool Previews**: Cursor-following preview rendered in real time using `tool-moved` events.
+
+### 🎨 User Customization
+
+- **Color Control**: Hue slider adjusts marker color with live canvas preview.
+- **Sticker Rotation**: Orientation slider enables precise sticker placement with real-time rotation feedback.
+- **UI Synchronization**: Tool state (active tool, color, rotation) is maintained and reflected across controls.
+
+### 💡 Refactorings & Architecture
+
+- **Command Pattern**: All drawing actions (strokes, stickers) encapsulated as commands for consistent undo/redo behavior.
+- **Data-Driven Design**: Stickers defined in a central array, enabling dynamic tool creation and easier extensibility.
+- **Separation of Concerns**:
+  - `display()` and `drag()` methods abstract rendering logic.
+  - `renderStickerOnCanvas()` centralizes drawing logic for reuse.
+- **Clean Code Practices**:
+  - Functions grouped and commented in `main.ts`.
+  - Reusable utilities like `deselectAll()` and `selectMarker()` reduce redundancy.
